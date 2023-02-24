@@ -4,13 +4,13 @@ using System.Text;
 using System.Reactive;
 using ReactiveUI;
 using VpHw_1.Models;
-namespace VpHw_1.ViewModels
-{
+
+namespace VpHw_1.ViewModels {
     public class MainWindowViewModel : ViewModelBase
     { 
         string _secondNum;
-         string _operation = " ";
-        private RomanNumberExtend _result;
+        string _operation = " ";
+        private RomanNumberExtend? _result;
         private RomanNumberExtend _secondValue;
         public MainWindowViewModel()
         {
@@ -97,6 +97,10 @@ namespace VpHw_1.ViewModels
                         ShowValue = _result.ToString();
                     _operation = "n";
                     _result = null;
+                } else if(operation == "C") {
+                    _operation = " ";
+                    _result = null;
+                    ShowValue = "";
                 }
                 else
                 {
@@ -106,7 +110,7 @@ namespace VpHw_1.ViewModels
             }
             catch (RomanNumberException ex)
             {
-                ShowValue = $"Ошибка: {ex.Message}";
+                ShowValue = $"ERROR";
             }
         }
     }

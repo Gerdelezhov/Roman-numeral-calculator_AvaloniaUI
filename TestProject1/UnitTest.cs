@@ -1,6 +1,6 @@
 using VpHw_1.Models;
 
-namespace TestProject
+namespace UITestsForRomanNumbersCalculator
 {
     public class UnitTest
     {

@@ -10,7 +10,7 @@ namespace VpHw_1.Models
     {
         public static ushort ToInt(string num)
         {
-          
+            if (num == null) return 0;
 
             num = new string(num.Reverse().ToArray());
             ushort to_int = 0;
